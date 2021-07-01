@@ -11,4 +11,4 @@ spec:
   source:
     path: argo/argo-events
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
-    targetRevision: main
+    targetRevision: master
