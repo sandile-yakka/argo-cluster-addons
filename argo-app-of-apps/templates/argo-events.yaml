@@ -11,6 +11,6 @@ spec:
   source:
     helm:
       valueFile: values.yaml
-    path: argo/argo-events
+    path: apps/argo-events/
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master
