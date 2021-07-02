@@ -9,6 +9,8 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: cluster-addons
   source:
+    helm:
+      valueFile: values.yaml
     path: argo/argo-events
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master
