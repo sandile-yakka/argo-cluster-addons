@@ -4,6 +4,7 @@ metadata:
   name: argo-events
   namespace: argo-events
 spec:
+  project: cluster-addons
   syncPolicy:
     automated: {}
   destination:
