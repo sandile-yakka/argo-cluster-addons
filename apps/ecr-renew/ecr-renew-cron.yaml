@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  namespace: helpers
+  namespace: argo-events
   name: cron-ecr-renew
   labels:
     app: ecr-renew
