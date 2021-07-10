@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: kaniko-build-template
+spec:
+  templates:
+  - name: kaniko-build
+    inputs:
+      parameters:
+      - name: dockerfile_path
+        value: './dockerfile'
+      - name: repo_url
+        value: 'git://sandile-yakka:sa11ndi%3Fle%23@github.com/InstaFinders/inventory-gatherer.git'
+      - name: registry_url
+        value: '516599252282.dkr.ecr.af-south-1.amazonaws.com/inventory-gatherer:v1-kaniko'
+    container:
+      image: gcr.io/kaniko-project/executor:latest
+      args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
+              "--context={{input.parameters.repo_url}}",
+              "--destination={{input.parameters.registry_url}}"]
+      volumeMounts:
+      - name: kaniko-secret
+        mountPath: /kaniko/.docker  
+    volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: regcred
+        items:
+          - key: .dockerconfigjson
+            path: config.json

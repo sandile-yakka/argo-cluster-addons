@@ -1,0 +1,7 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: kaniko-build
+spec:
+  workflowTemplateRef:
+    name: kaniko-build-template
