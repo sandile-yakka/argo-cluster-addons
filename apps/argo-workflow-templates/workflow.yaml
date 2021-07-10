@@ -1,8 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
+  name: kaniko-build
   generateName: kaniko-build
   namespace: argo-events
 spec:
+  entryPoint: kaniko-build-template
   workflowTemplateRef:
     name: kaniko-build-template
