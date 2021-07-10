@@ -42,7 +42,7 @@ controller:
     registry: quay.io
     repository: argoproj/workflow-controller
     # Overrides the image tag whose default is the chart appVersion.
-    tag: v3.1.1
+    tag: ""
   # parallelism dictates how many workflows can be running at the same time
   parallelism:
   # podAnnotations is an optional map of annotations to be applied to the controller Pods
@@ -112,7 +112,7 @@ controller:
   workflowNamespaces:
     - default
   # previous value was docker which causes problems when running on non-docker environment
-  # changing it to kubernetes api 
+  # changing it to kubernetes api https://argoproj.github.io/argo-workflows/workflow-executors/
   containerRuntimeExecutor: k8sapi
   instanceID:
     # `instanceID.enabled` configures the controller to filter workflow submissions
@@ -180,7 +180,7 @@ executor:
     registry: quay.io
     repository: argoproj/argoexec
     # Overrides the image tag whose default is the chart appVersion.
-    tag: v3.1.1
+    tag: ""
   resources: {}
   # Adds environment variables for the executor.
   env: {}
@@ -197,7 +197,7 @@ server:
     registry: quay.io
     repository: argoproj/argocli
     # Overrides the image tag whose default is the chart appVersion.
-    tag: v3.1.1
+    tag: ""
   # optional map of annotations to be applied to the ui Pods
   podAnnotations: {}
   # Optional labels to add to the UI pods
