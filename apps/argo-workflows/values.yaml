@@ -176,9 +176,9 @@ controller:
 executor:
   image:
     registry: quay.io
-    repository: argoproj/argoexec:v3.1.1
+    repository: argoproj/argoexec
     # Overrides the image tag whose default is the chart appVersion.
-    tag: ""
+    tag: v3.1.1
   resources: {}
   # Adds environment variables for the executor.
   env: {}
