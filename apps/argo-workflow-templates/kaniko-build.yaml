@@ -17,7 +17,7 @@ spec:
     serviceAccount: argo-workflow-executor-sa
     serviceAccountName: argo-workflow-executor-sa
     container:
-      image: kaniko
+      image: gcr.io/kaniko-project/executor:latest
       args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
               "--context={{input.parameters.repo_url}}",
               "--destination={{input.parameters.registry_url}}"]
