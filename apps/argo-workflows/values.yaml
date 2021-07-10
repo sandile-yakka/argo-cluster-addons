@@ -105,7 +105,7 @@ controller:
     additionalLabels: {}
   serviceAccount:
     create: true
-    name: ""
+    name: argo-workflow-controller-sa
     # Annotations applied to created service account
     annotations: {}
   name: workflow-controller
@@ -217,7 +217,7 @@ server:
   # servicePortName: http
   serviceAccount:
     create: true
-    name: ""
+    name: argo-workflow-server-sa
     annotations: {}
   # Annotations to be applied to the UI Service
   serviceAnnotations: {}
