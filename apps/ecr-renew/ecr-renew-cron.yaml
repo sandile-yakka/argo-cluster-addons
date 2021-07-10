@@ -14,7 +14,7 @@ spec:
       template:
         spec:
           restartPolicy: OnFailure
-          serviceAccountName: svc-ecr-renew
+          serviceAccountName: ecr-renew
           containers:
             - name: ecr-renew
               image: nabsul/k8s-ecr-login-renew:latest
