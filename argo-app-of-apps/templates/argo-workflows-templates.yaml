@@ -12,8 +12,6 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: cluster-addons
   source:
-    helm:
-      valueFile: values.yaml
     path: apps/argo-workflow-templates/
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master
