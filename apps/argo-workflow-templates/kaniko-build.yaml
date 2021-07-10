@@ -15,6 +15,7 @@ spec:
       - name: registry_url
         value: '516599252282.dkr.ecr.af-south-1.amazonaws.com/inventory-gatherer:v1-kaniko'
     serviceAccount: operate-workflow-sa 
+    serviceAccountName: operate-workflow-sa 
     container:
       image: kaniko
       args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
