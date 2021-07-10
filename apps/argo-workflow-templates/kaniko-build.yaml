@@ -14,6 +14,7 @@ spec:
         value: 'git://sandile-yakka:sa11ndi%3Fle%23@github.com/InstaFinders/inventory-gatherer.git'
       - name: registry_url
         value: '516599252282.dkr.ecr.af-south-1.amazonaws.com/inventory-gatherer:v1-kaniko'
+    serviceAccount: operate-workflow-sa 
     container:
       image: kaniko
       args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
