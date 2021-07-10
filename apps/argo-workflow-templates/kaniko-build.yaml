@@ -15,7 +15,7 @@ spec:
       - name: registry_url
         value: '516599252282.dkr.ecr.af-south-1.amazonaws.com/inventory-gatherer:v1-kaniko'
     container:
-      image: gcr.io/kaniko-project/executor:latest
+      image: kaniko
       args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
               "--context={{input.parameters.repo_url}}",
               "--destination={{input.parameters.registry_url}}"]
