@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   creationTimestamp: null
-  name: executor-role
+  name: argo-workflow-executor-role
 rules:
 - apiGroups:
   - ""
@@ -10,3 +10,4 @@ rules:
   - pods
   verbs:
   - get
+  - watch
