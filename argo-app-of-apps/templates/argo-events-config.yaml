@@ -11,6 +11,7 @@ spec:
     namespace: {{ .Values.spec.destination.namespace }}
     server: {{ .Values.spec.destination.server }}
   project: cluster-addons
+  source:
     path: config/argo-events-config/
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master
