@@ -42,10 +42,13 @@ spec:
         templateRef:
           clusterScope: false
           name: script-echo-complete
+        dependencies:
+          - kaniko-build
   - name: script-echo-complete
     script: 
       command: ['sh', '-c', 'echo hello-world']
       image: alpine
-    dependencies:
-    - kaniko-build
+    serviceAccount: argo-workflow-executor-sa
+    serviceAccountName: argo-workflow-executor-sa
+
 
