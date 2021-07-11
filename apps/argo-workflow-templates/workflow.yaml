@@ -5,8 +5,7 @@ metadata:
   generateName: kaniko-build
   namespace: argo-events
 spec:
-  entrypoint: kaniko-build
+  entrypoint: build-dag
   workflowTemplateRef:
     clusterScope: false
     name: kaniko-build-template
-        

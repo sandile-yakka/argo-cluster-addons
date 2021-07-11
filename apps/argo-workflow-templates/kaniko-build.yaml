@@ -5,6 +5,15 @@ metadata:
   namespace: argo-events
 spec:
   templates:
+  - name: build-dag
+    dag:
+      tasks:
+      - name: build
+        template: kaniko-build
+      - name: echo-complete
+        template: script-echo-complete
+        dependencies:
+          - build
   - name: kaniko-build
     inputs:
       parameters:
@@ -23,7 +32,7 @@ spec:
               "--destination={{inputs.parameters.registry_url}}"]
       volumeMounts:
       - name: kaniko-secret
-        mountPath: /kaniko/.docker  
+        mountPath: /kaniko/.docker 
     volumes:
     - name: kaniko-secret
       secret:
@@ -31,19 +40,6 @@ spec:
         items:
           - key: .dockerconfigjson
             path: config.json
-    dag:
-      target:
-      tasks:
-      - name: build
-        templateRef:
-          clusterScope: false
-          name: kaniko-build
-      - name: echo-complete
-        templateRef:
-          clusterScope: false
-          name: script-echo-complete
-        dependencies:
-          - kaniko-build
   - name: script-echo-complete
     script: 
       command: ['sh', '-c', 'echo hello-world']
