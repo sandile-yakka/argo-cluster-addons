@@ -31,3 +31,21 @@ spec:
         items:
           - key: .dockerconfigjson
             path: config.json
+    dag:
+      target:
+      tasks:
+      - name: build
+        templateRef:
+          clusterScope: false
+          name: kaniko-build
+      - name: echo-complete
+        templateRef:
+          clusterScope: false
+          name: script-echo-complete
+    - name: script-echo-complete
+      script: 
+        command: ['sh', '-c', 'echo hello-world']
+        image: alpine
+      dependencies:
+      - kaniko-build
+

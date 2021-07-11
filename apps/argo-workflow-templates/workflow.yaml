@@ -9,3 +9,4 @@ spec:
   workflowTemplateRef:
     clusterScope: false
     name: kaniko-build-template
+        
