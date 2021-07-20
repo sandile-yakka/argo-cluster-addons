@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: services-app-of-apps
+  name: services-app-of-apps-1
   namespace: argo-cd
 spec:
   syncPolicy:

@@ -7,7 +7,7 @@ spec:
   syncPolicy:
     automated: {}
   destination:
-    namespace: argo-cd
+    namespace: dev
     server: https://kubernetes.default.svc
   project: cluster-addons
   source:
