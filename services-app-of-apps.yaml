@@ -1,17 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ecr-cred-renew
+  name: services-app-of-apps
   namespace: argo-cd
 spec:
-  project: cluster-addons
   syncPolicy:
     automated: {}
   destination:
-    namespace: {{ .Values.spec.destination.namespace }}
-    server: {{ .Values.spec.destination.server }}
-  project: cluster-addons
+    namespace: argo-cd
+    server: https://kubernetes.default.svc
+  project: dev-services
   source:
-    path: apps/ecr-renew
+    path: dev-app-of-apps
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master

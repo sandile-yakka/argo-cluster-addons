@@ -20,7 +20,7 @@ spec:
       - name: dockerfile_path
         value: './dockerfile'
       - name: repo_url
-        value: 'git://sandile-yakka:sa11ndi%3Fle%23@github.com/InstaFinders/inventory-gatherer.git'
+        value: 'git://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@github.com/InstaFinders/inventory-gatherer.git'
       - name: registry_url
         value: '516599252282.dkr.ecr.af-south-1.amazonaws.com/inventory-gatherer:v1-kaniko'
     serviceAccount: argo-workflow-executor-sa
@@ -28,8 +28,8 @@ spec:
     container:
       image: gcr.io/kaniko-project/executor:latest
       args: ["--dockerfile={{inputs.parameters.dockerfile_path}}",
-              "--context={{inputs.parameters.repo_url}}",
-              "--destination={{inputs.parameters.registry_url}}"]
+             "--context={{inputs.parameters.repo_url}}",
+             "--destination={{inputs.parameters.registry_url}}"]
       volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker 
@@ -43,8 +43,8 @@ spec:
   - name: script-echo-complete
     script: 
       command: ['sh', '-c', 'echo hello-world']
-      image: alpine
+      image: alpine 
     serviceAccount: argo-workflow-executor-sa
     serviceAccountName: argo-workflow-executor-sa
-
+  
 
