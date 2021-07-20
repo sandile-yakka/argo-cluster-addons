@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev-services
+  namespace: argo-cd
+spec:
+  description: 'project for deploying dev workloads'
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
+
+
