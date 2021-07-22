@@ -6,12 +6,12 @@ metadata:
 spec:
   description: 'project for deploying dev workloads'
   namespaceResourceWhitelist:
-  - group: 'apps'
+  - group: '*'
     kind: '*'
   sourceRepos:
   - '*'
   destinations:
   - namespace: '*'
-    server: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc  
 
 
