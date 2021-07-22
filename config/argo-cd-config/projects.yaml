@@ -6,7 +6,8 @@ metadata:
 spec:
   description: 'project for deploying dev workloads'
   namespaceResourceWhitelist:
-  - '*'
+  - group: 'apps'
+    kind: '*'
   sourceRepos:
   - '*'
   destinations:

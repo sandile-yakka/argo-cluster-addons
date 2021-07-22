@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: overlord-api-dev
-  namespace: dev
+  namespace: argo-cd
 spec:
   destination:
     namespace: dev
