@@ -14,7 +14,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-    path: dev-app-of-apps/overlord-api
+    path: dev-app-of-apps/
     repoURL: https://github.com/sandile-yakka/argo-cluster-addons
     targetRevision: master
   sourceType: Helm
