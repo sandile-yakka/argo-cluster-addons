@@ -5,6 +5,9 @@ metadata:
   namespace: argo-cd
 spec:
   description: 'project for deploying dev workloads'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
   namespaceResourceWhitelist:
   - group: '*'
     kind: '*'
