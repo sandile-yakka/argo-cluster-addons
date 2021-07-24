@@ -47,6 +47,8 @@ spec:
       parameters:
       - name: argo_repo_url
         value: https://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@github.com/sandile-yakka/argo-cluster-addons.git#master # default branch
+      - name: branch
+        value: master # default branch
     script: 
       command: ['sh', '-c', 'wget https://github.com/mikefarah/yq/releases/download/2.4.1/yq_linux_amd64 -O /usr/bin/yq &&\
         chmod +x /usr/bin/yq;
